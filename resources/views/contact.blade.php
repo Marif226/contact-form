@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1>Contact Form</h1>
+
+    @if($errors->any())
+    <div>
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+
+    @endif
+
     <form action="{{ route('contact-form') }}" method="post">
         @csrf
 
