@@ -22,9 +22,9 @@ class ContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => 'required|min:2|max:50',
+            "name" => 'required|string|alpha|min:2|max:50',
             "email" => 'required|email:rfc,dns',
-            "message" => 'max:255',
+            "message" => 'string|max:255',
         ];
     }
 }
