@@ -41,14 +41,14 @@
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 
-    @if(isset($newContact))
+    @if(session()->has('newContact'))
     <hr>
     <h1>Contact Info</h1>
     <div>
-        <strong>Name:</strong> {{ $newContact->name }}<br>
-        <strong>Email:</strong> {{ $newContact->email }}<br>
-        <strong>Message:</strong> {{ $newContact->message }}<br>
-        <strong>Created at:</strong> {{ $newContact->created_at }}<br>
+        <strong>Name:</strong> {{ session('newContact')->name }}<br>
+        <strong>Email:</strong> {{ session('newContact')->email }}<br>
+        <strong>Message:</strong> {{ session('newContact')->message }}<br>
+        <strong>Created at:</strong> {{ session('newContact')->created_at }}<br>
     </div>
     @endif
 </body>

@@ -15,8 +15,8 @@ class ContactController extends Controller
 
         $contact->save();
 
-        $newContact = Contact::latest()->first();
+        session()->flash('newContact', $contact);
 
-        return view('contact', ['newContact' => $newContact]);
+        return redirect()->route('contact');
     }
 }
